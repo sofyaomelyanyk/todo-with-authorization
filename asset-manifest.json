@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/todo-with-authorization/static/css/main.e6c13ad2.css",
+    "main.js": "/todo-with-authorization/static/js/main.8b86dff9.js",
+    "index.html": "/todo-with-authorization/index.html",
+    "main.e6c13ad2.css.map": "/todo-with-authorization/static/css/main.e6c13ad2.css.map",
+    "main.8b86dff9.js.map": "/todo-with-authorization/static/js/main.8b86dff9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.8b86dff9.js"
+  ]
+}
