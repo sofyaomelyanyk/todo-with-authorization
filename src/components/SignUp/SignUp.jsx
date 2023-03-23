@@ -1,10 +1,12 @@
 import { Form } from "../Form/Form";
 import { useDispatch } from "react-redux";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { setUser } from "../../store/slices/userSlice";
+// import { setUser } from "../../store/slices/userSlice";
 
 export const SignUp = () => {
   const dispatch = useDispatch();
+
+  console.log(dispatch);
 
   const handleRegister = (email, password) => {
     const auth = getAuth();

@@ -1,10 +1,12 @@
 import { Form } from "../Form/Form";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { setUser } from "../../store/slices/userSlice";
+// import { setUser } from "../../store/slices/userSlice";
 
 export const Login = () => {
   const dispatch = useDispatch();
+
+  console.log(dispatch);
 
   const handleLogin = (email, password) => {
     const auth = getAuth();
