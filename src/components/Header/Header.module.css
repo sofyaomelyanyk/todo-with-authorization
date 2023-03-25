@@ -1,0 +1,15 @@
+.header-container {
+   margin-bottom: 30px;
+   padding-bottom: 30px;
+   padding-top: 30px;
+   text-align: center;
+   font-family: "Phudu";
+   font-weight: 500;
+   background-color: rgb(100, 149, 237);
+   border-radius: 15px;
+ 
+   font-size: 30px;
+ 
+   color: rgb(255, 255, 255);
+ }
+ 

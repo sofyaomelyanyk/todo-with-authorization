@@ -1,0 +1,15 @@
+.filter-container {
+   margin-bottom: 20px;
+   display: flex;
+   gap: 30px;
+ }
+ 
+ .btn {
+   font-family: "Phudu";
+   font-weight: 500;
+   padding-left: 15px;
+   padding-right: 15px;
+ }
+ 
+ 
+ 

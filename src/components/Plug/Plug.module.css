@@ -1,0 +1,25 @@
+@media screen and (min-width: 320px) {
+   .title {
+  
+     font-family: "Phudu";
+     font-weight: 500;
+     margin: 0;
+     font-size: 20px;
+     position: absolute;
+     text-align: center;
+     left: 50%;
+     top:40%;
+     transform: translateX(-50%);
+   }
+ }
+ 
+ @media screen and (min-width: 768px) {
+   .title {
+     font-size: 30px;
+   }
+ }
+ 
+ .image {
+   position: relative;
+ }
+ 
