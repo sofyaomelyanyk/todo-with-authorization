@@ -1,18 +1,29 @@
 import { Form } from "../Form/Form";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-// import { setUser } from "../../store/slices/userSlice";
+import { useNavigate } from "react-router-dom";
+import { setUser } from "../../store/slices/userSlice";
 
 export const Login = () => {
   const dispatch = useDispatch();
 
-  console.log(dispatch);
+  const navigate = useNavigate();
 
   const handleLogin = (email, password) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
-      .then(console.log)
-      .catch(console.error);
+      .then(({ user }) => {
+        console.log(user);
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.accessToken,
+          })
+        );
+        navigate("/");
+      })
+      .catch(() => alert("Invalid user"));
   };
 
   return <Form title="Sign In" handleClick={handleLogin} />;
