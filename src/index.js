@@ -9,7 +9,7 @@ import "./firebase";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/todo-with-authorization">
+    <BrowserRouter basename="/todo-with-authorization" >
       <Provider store={store}>
         <App />
       </Provider>
