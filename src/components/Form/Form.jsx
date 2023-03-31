@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../Form/Form.module.css";
 
 export const Form = ({ title, handleClick }) => {
   const [email, setEmail] = useState("");
@@ -17,8 +18,13 @@ export const Form = ({ title, handleClick }) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
+        
       />
-      <button onClick={(e) => handleClick(email, password)}>{title}</button>
+      {email && password ? (
+        <button onClick={(e) => handleClick(email, password)}>{title}</button>
+      ) : (
+        <button disabled>{title}</button>
+      )}
     </div>
   );
 };

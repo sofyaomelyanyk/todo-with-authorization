@@ -14,6 +14,8 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = (email, password) => {
+   
+
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
