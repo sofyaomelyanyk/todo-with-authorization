@@ -24,7 +24,7 @@ export const SignUp = () => {
         );
         navigate("/");
       })
-      .catch(console.error);
+      .catch(() => navigate("/user-already-exists"));
   };
   return <Form title="Register" handleClick={handleRegister} />;
 };

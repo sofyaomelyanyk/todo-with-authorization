@@ -1,8 +1,9 @@
-import styles from "./styles.module.scss";
+
+import styles from "./UserAlreadyExists.module.scss";
 
 import { useNavigate } from "react-router-dom";
 
-export const EmailVerificationWarningPage = () => {
+export const UserAlreadyExists = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -11,13 +12,10 @@ export const EmailVerificationWarningPage = () => {
 
   return (
     <div className={styles["warning-page"]}>
-      <div>
-        <p className={styles["verification-warning"]}>
-          Your email is not verified.
-        </p>
-        <p>Please verify your email to access this page.</p>
-      </div>
-
+      <p className={styles["verification-warning"]}>
+        User with this email already exist
+      </p>
+      <p>You can login</p>
       <button onClick={handleBack} className={styles["back-button"]}>
         Back to login
       </button>

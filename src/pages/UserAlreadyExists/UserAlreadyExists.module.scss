@@ -1,0 +1,39 @@
+.warning-page {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+ 
+   p {
+     font-size: 18px;
+     margin: 10px 0;
+     text-align: center;
+   }
+ 
+   .verification-warning {
+     font-weight: bold;
+     color: red;
+   }
+ 
+  
+ 
+   .back-button {
+     padding: 10px;
+     border-radius: 10px;
+     background-color: transparent;
+     outline: none;
+     border: 1px solid #9d9797;
+     color: #9d9797;
+     cursor: pointer;
+     transition: all 0.3s ease-in-out;
+     margin-top: 20px;
+     font-size: 1rem;
+ 
+     &:hover {
+       border: 1px solid #454545;
+       color: #454545;
+     }
+   }
+ }
+ 

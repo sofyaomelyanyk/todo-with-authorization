@@ -33,7 +33,7 @@ export const Login = () => {
           });
         }
       })
-      .catch(() => navigate("/email-not-verified"));
+      .catch(() => navigate("/not-found-user"));
   };
 
   return <Form title="Sign In" handleClick={handleLogin} />;
