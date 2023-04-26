@@ -1,16 +1,15 @@
-// import s from "../LoginPage/LoginPage.module.css";
+import { Container, StyledLink } from "./LoginPage.styled";
 
-import { Link } from "react-router-dom";
 import { Login } from "../../components/Login/Login";
 
 export const LoginPage = () => {
   return (
-    <div>
+    <Container>
       <h1>Login</h1>
       <Login />
       <p>
-        Or <Link to="/register">register</Link>
+        Or <StyledLink to="/register">register</StyledLink>
       </p>
-    </div>
+    </Container>
   );
 };

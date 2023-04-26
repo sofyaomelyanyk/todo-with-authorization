@@ -6,7 +6,7 @@ export const Form = ({ title, handleClick }) => {
   const [password, setPassword] = useState("");
 
   return (
-    <form className={s.form}>
+    <div className={s.form}>
       <div className={s["form-field"]}>
         <label>Email</label>
         <input
@@ -37,9 +37,11 @@ export const Form = ({ title, handleClick }) => {
         </div>
       ) : (
         <div className={s["form-field"]}>
-          <button className={s["button-disabled"]} disabled>{title}</button>
+          <button className={s["button-disabled"]} disabled>
+            {title}
+          </button>
         </div>
       )}
-    </form>
+    </div>
   );
 };
