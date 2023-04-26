@@ -10,7 +10,6 @@ export const SignUp = () => {
   const navigate = useNavigate();
 
   const handleRegister = (email, password) => {
-  
     const auth = getAuth();
     console.log(auth);
     createUserWithEmailAndPassword(auth, email, password)
