@@ -1,30 +1,45 @@
 import { useState } from "react";
-import "../Form/Form.module.css";
+import s from "../Form/Form.module.css";
 
 export const Form = ({ title, handleClick }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    <div>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        
-      />
+    <form className={s.form}>
+      <div className={s["form-field"]}>
+        <label>Email</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+        />
+      </div>
+      <div className={s["form-field"]}>
+        <label>Password</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+      </div>
+
       {email && password ? (
-        <button onClick={(e) => handleClick(email, password)}>{title}</button>
+        <div className={s["form-field"]}>
+          <button
+            className={s.button}
+            onClick={(e) => handleClick(email, password)}
+          >
+            {title}
+          </button>
+        </div>
       ) : (
-        <button disabled>{title}</button>
+        <div className={s["form-field"]}>
+          <button className={s["button-disabled"]} disabled>{title}</button>
+        </div>
       )}
-    </div>
+    </form>
   );
 };
