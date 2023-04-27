@@ -22,16 +22,26 @@ export const Form = ({ title, handleClick }) => {
     } else setEmailError("");
   };
 
+  const passwordHandler = (e) => {
+    setPassword(e.target.value);
+    if (e.target.value.length < 6 || e.target.value.length > 8) {
+      setPasswordError("Password must be between 6 and 8 characters");
+      if (!e.target.value) {
+        setPasswordError("Password is required");
+      }
+    } else setPasswordError("");
+  };
+
   const blurHandler = (e) => {
     switch (e.target.name) {
       case "email":
         setEmailDirty(true);
         break;
       case "password":
-        setPassword(true);
+        setPasswordDirty(true);
         break;
-        default:
-         console('default')
+      default:
+        console("default");
     }
   };
 
@@ -61,12 +71,12 @@ export const Form = ({ title, handleClick }) => {
           type="password"
           value={password}
           name="password"
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => passwordHandler(e)}
           placeholder="Password"
         />
       </div>
 
-      {email && password ? (
+      {!emailError && !passwordError ? (
         <div className={s["form-field"]}>
           <button
             className={s.button}
