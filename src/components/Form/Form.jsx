@@ -4,35 +4,63 @@ import s from "../Form/Form.module.css";
 export const Form = ({ title, handleClick }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailDirty, setEmailDirty] = useState(false);
+  const [passwordDirty, setPasswordDirty] = useState(false);
   const [emailError, setEmailError] = useState("Email is required");
+  const [passwordError, setPasswordError] = useState("Password is required");
 
   const emailHandler = (e) => {
     setEmail(e.target.value);
-    const re =
-      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    if (!re.test(String(e.target.value).toLowerCase())) {
-      setEmailError("Неккоректный Email");
+    if (
+      !String(e.target.value)
+        .toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )
+    ) {
+      setEmailError("Ivalid email");
     } else setEmailError("");
+  };
+
+  const blurHandler = (e) => {
+    switch (e.target.name) {
+      case "email":
+        setEmailDirty(true);
+        break;
+      case "password":
+        setPassword(true);
+        break;
+        default:
+         console('default')
+    }
   };
 
   return (
     <div className={s.form}>
       <div className={s["form-field"]}>
-        
         <label className={s.text}>Email</label>
-        {emailError && <div>{emailError}</div>}
+        {emailError && emailDirty && (
+          <div className={s.error}>{emailError}</div>
+        )}
         <input
+          onBlur={(e) => blurHandler(e)}
           type="email"
           value={email}
+          name="email"
           onChange={(e) => emailHandler(e)}
           placeholder="Email"
         />
       </div>
       <div className={s["form-field"]}>
         <label className={s.text}>Password</label>
+        {passwordError && passwordDirty && (
+          <div className={s.error}>{passwordError}</div>
+        )}
         <input
+          onBlur={(e) => blurHandler(e)}
           type="password"
           value={password}
+          name="password"
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
