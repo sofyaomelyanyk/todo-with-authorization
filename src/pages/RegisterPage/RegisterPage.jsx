@@ -1,14 +1,24 @@
 import { SignUp } from "../../components/SignUp/SignUp";
-import { Container, StyledLink } from "./RegisterPage.styled";
+import BGImg from "../../images/todo-img.png";
+import {
+  Container,
+  StyledLink,
+  Wrap,
+  Text,
+  Title,
+} from "./RegisterPage.styled";
 
 export const RegisterPage = () => {
   return (
-    <Container>
-      <h1>Register</h1>
-      <SignUp />
-      <p>
-        Already have an account? <StyledLink to="/login">Sign in</StyledLink>
-      </p>
-    </Container>
+    <Wrap>
+      <img src={BGImg} alt="" width={700} />
+      <Container>
+        <Title>Register</Title>
+        <SignUp />
+        <Text>
+          Already have an account? <StyledLink to="/login">Sign in</StyledLink>
+        </Text>
+      </Container>
+    </Wrap>
   );
 };

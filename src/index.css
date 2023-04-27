@@ -6,9 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("/src/images/background-img.png");
-  background-size: cover;
-  background-position: center center;
+  background-color: #9ccfe998;
 }
 
 code {

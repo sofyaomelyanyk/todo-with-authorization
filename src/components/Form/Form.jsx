@@ -8,7 +8,7 @@ export const Form = ({ title, handleClick }) => {
   return (
     <div className={s.form}>
       <div className={s["form-field"]}>
-        <label>Email</label>
+        <label className={s.text}>Email</label>
         <input
           type="email"
           value={email}
@@ -17,7 +17,7 @@ export const Form = ({ title, handleClick }) => {
         />
       </div>
       <div className={s["form-field"]}>
-        <label>Password</label>
+        <label className={s.text}>Password</label>
         <input
           type="password"
           value={password}

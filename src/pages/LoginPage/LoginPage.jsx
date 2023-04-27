@@ -1,15 +1,18 @@
-import { Container, StyledLink } from "./LoginPage.styled";
-
+import { Container, StyledLink, Wrap, Title, Text } from "./LoginPage.styled";
+import BGImg from "../../images/todo-img.png";
 import { Login } from "../../components/Login/Login";
 
 export const LoginPage = () => {
   return (
-    <Container>
-      <h1>Login</h1>
-      <Login />
-      <p>
-        Or <StyledLink to="/register">register</StyledLink>
-      </p>
-    </Container>
+    <Wrap>
+      <img src={BGImg} alt="" width={700} />
+      <Container>
+        <Title>Login</Title>
+        <Login />
+        <Text>
+          Or <StyledLink to="/register">register</StyledLink>
+        </Text>
+      </Container>
+    </Wrap>
   );
 };
