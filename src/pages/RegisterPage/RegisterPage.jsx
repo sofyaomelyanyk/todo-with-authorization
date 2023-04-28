@@ -6,12 +6,16 @@ import {
   Wrap,
   Text,
   Title,
+  ImgWrap,
 } from "./RegisterPage.styled";
 
 export const RegisterPage = () => {
   return (
     <Wrap>
-      <img src={BGImg} alt="" width={700} />
+      <ImgWrap>
+        <img src={BGImg} alt="" />
+      </ImgWrap>
+
       <Container>
         <Title>Register</Title>
         <SignUp />

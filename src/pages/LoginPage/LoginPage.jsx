@@ -13,7 +13,7 @@ export const LoginPage = () => {
   return (
     <Wrap>
       <ImgWrap>
-        <img src={BGImg} alt="" width={700} />
+        <img src={BGImg} alt=""  />
       </ImgWrap>
       <Container>
         <Title>Login</Title>
