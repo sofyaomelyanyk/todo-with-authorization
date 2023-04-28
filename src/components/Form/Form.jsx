@@ -1,5 +1,5 @@
 import { useState } from "react";
-import s from "../Form/Form.module.css";
+import s from "../Form/Form.module.scss";
 
 export const Form = ({ title, handleClick }) => {
   const [email, setEmail] = useState("");
@@ -52,7 +52,7 @@ export const Form = ({ title, handleClick }) => {
         {emailError && emailDirty && (
           <div className={s.error}>{emailError}</div>
         )}
-        <input
+        <input className={s.input}
           onBlur={(e) => blurHandler(e)}
           type="email"
           value={email}
@@ -66,7 +66,7 @@ export const Form = ({ title, handleClick }) => {
         {passwordError && passwordDirty && (
           <div className={s.error}>{passwordError}</div>
         )}
-        <input
+        <input className={s.input}
           onBlur={(e) => blurHandler(e)}
           type="password"
           value={password}

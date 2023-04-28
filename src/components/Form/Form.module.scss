@@ -1,0 +1,132 @@
+.form {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  @media (min-width: 768px) {
+    width: 400px;
+    gap: 30px;
+  }
+  @media (min-width: 1280px) {
+    gap: 20px;
+  }
+}
+
+/* Общие стили для полей формы */
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  display: block;
+  min-width: 100%;
+}
+
+/* Стили для метки поля формы */
+.form-field label {
+  font-weight: bold;
+  margin-bottom: 15px;
+  @media (min-width: 768px) {
+    margin-bottom: 10px;
+  }
+  @media (min-width: 1280px) {
+    margin-bottom: 10px;
+  }
+}
+
+/* Стили для текстового поля ввода */
+
+.form-field input[type="email"],
+.form-field input[type="password"] {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 35px;
+  line-height: 1.5;
+  color: #333;
+  @media (min-width: 768px) {
+    padding: 15px;
+    font-size: 25px;
+  }
+  @media (min-width: 1280px) {
+    padding: 10px;
+    font-size: 20px;
+  }
+}
+
+.text {
+  font-size: 35px;
+  @media (min-width: 768px) {
+    font-size: 25px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+}
+
+.button {
+  width: 60%;
+  margin: 40px auto;
+  background-color: #4caf50;
+  border: 1px solid #4caf50;
+  border-radius: 10px;
+  color: white;
+  padding: 25px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 35px;
+  cursor: pointer;
+  @media (min-width: 768px) {
+    margin: 20px auto;
+    padding: 10px 20px;
+    width: 40%;
+    font-size: 25px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.button-disabled {
+  width: 100%;
+  margin: 40px auto;
+
+  border: 1px solid #9d9797;
+  border-radius: 10px;
+  color: #9d9797;
+  padding: 25px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 35px;
+  cursor: pointer;
+  @media (min-width: 768px) {
+    margin: 20px auto;
+    padding: 10px 20px;
+    width: 40%;
+    font-size: 25px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+}
+
+.error {
+  color: rgb(255, 0, 0);
+  font-size: 35px;
+  margin-bottom: 10px;
+  @media (min-width: 768px) {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+}
