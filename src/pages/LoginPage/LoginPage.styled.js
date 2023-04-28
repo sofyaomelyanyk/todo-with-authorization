@@ -13,13 +13,13 @@ export const ImgWrap = styled.div`
   }
 `;
 export const Title = styled.h1`
-  font-size: 65px;
+  font-size: 40px;
   @media (min-width: 768px) {
-    font-size: 45px;
+    font-size: 30px;
   }
 `;
 export const Text = styled.p`
-  font-size: 35px;
+  font-size: 25px;
   @media (min-width: 768px) {
     font-size: 20px;
   }
@@ -53,6 +53,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 50px;
   @media (min-width: 768px) {
     width: 500px;
     padding: 40px 30px;
@@ -65,5 +66,6 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 30px;
   }
 `;
