@@ -40,7 +40,7 @@
 
 .form-field input[type="email"],
 .form-field input[type="password"] {
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 25px;
@@ -91,7 +91,7 @@
 
 .button-disabled {
   width: 100%;
-  margin: 40px auto;
+  margin: 20px auto 40px;
 
   border: 1px solid #9d9797;
   border-radius: 10px;
@@ -103,7 +103,7 @@
   font-size: 25px;
   cursor: pointer;
   @media (min-width: 768px) {
-    margin: 20px auto;
+    margin: 10px auto 20px;
     padding: 10px 20px;
     width: 40%;
   }
