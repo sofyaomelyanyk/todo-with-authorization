@@ -52,7 +52,7 @@ export const Wrap = styled.div`
 export const Container = styled.div`
   width: 100%;
 
-  padding: 60px 30px;
+  padding: 60px 20px;
   background-color: rgb(255, 255, 255);
   -webkit-box-shadow: 10px 3px 18px 3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 3px 18px 3px rgba(0, 0, 0, 0.75);
