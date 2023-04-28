@@ -26,6 +26,11 @@ export const Text = styled.p`
 `;
 export const Wrap = styled.div`
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   @media (min-width: 768px) {
     margin-top: 50px;
     display: flex;
@@ -48,7 +53,11 @@ export const Container = styled.div`
   width: 100%;
 
   padding: 60px 30px;
-
+  background-color: rgb(255, 255, 255);
+  -webkit-box-shadow: 10px 3px 18px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 3px 18px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 3px 18px 3px rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
