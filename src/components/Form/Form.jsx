@@ -52,7 +52,8 @@ export const Form = ({ title, handleClick }) => {
         {emailError && emailDirty && (
           <div className={s.error}>{emailError}</div>
         )}
-        <input className={s.input}
+        <input
+          className={s.input}
           onBlur={(e) => blurHandler(e)}
           type="email"
           value={email}
@@ -66,7 +67,8 @@ export const Form = ({ title, handleClick }) => {
         {passwordError && passwordDirty && (
           <div className={s.error}>{passwordError}</div>
         )}
-        <input className={s.input}
+        <input
+          className={s.input}
           onBlur={(e) => blurHandler(e)}
           type="password"
           value={password}

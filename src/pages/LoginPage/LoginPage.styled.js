@@ -47,7 +47,7 @@ export const Wrap = styled.div`
 export const Container = styled.div`
   width: 100%;
 
-  padding: 40px 30px;
+  padding: 60px 30px;
 
   display: flex;
   justify-content: center;
