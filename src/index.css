@@ -6,13 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
-}
-
-@media screen and (min-width: 768px) {
-  body {
-    background-color: #9ccfe998;
-  }
+  background-color: #9ccfe998;
 }
 
 code {
