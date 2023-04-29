@@ -64,7 +64,7 @@
 
 .button {
   width: 60%;
-  margin: 40px auto;
+  margin: 20px auto;
   background-color: #4caf50;
   border: 1px solid #4caf50;
   border-radius: 10px;
@@ -91,7 +91,7 @@
 
 .button-disabled {
   width: 100%;
-  margin: 20px auto 40px;
+  margin: 20px auto;
 
   border: 1px solid #9d9797;
   border-radius: 10px;
@@ -103,7 +103,7 @@
   font-size: 20px;
   cursor: pointer;
   @media (min-width: 768px) {
-    margin: 10px auto 20px;
+    margin: 20px auto;
     padding: 10px 20px;
     width: 40%;
   }

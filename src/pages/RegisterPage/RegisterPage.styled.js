@@ -7,19 +7,20 @@ export const StyledLink = styled(Link)`
 `;
 
 export const ImgWrap = styled.div`
+  display: none;
   @media (min-width: 768px) {
     display: block;
     width: 700px;
   }
 `;
 export const Title = styled.h1`
-  font-size: 40px;
+  font-size: 30px;
   @media (min-width: 768px) {
     font-size: 30px;
   }
 `;
 export const Text = styled.p`
-  font-size: 25px;
+  font-size: 20px;
   @media (min-width: 768px) {
     font-size: 20px;
   }
