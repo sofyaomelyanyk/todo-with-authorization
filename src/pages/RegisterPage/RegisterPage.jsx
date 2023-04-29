@@ -15,7 +15,6 @@ export const RegisterPage = () => {
       <ImgWrap>
         <img src={BGImg} alt="" />
       </ImgWrap>
-
       <Container>
         <Title>Register</Title>
         <SignUp />
