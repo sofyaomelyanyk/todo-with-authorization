@@ -7,7 +7,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const ImgWrap = styled.div`
-display: none;
+  display: none;
   @media (min-width: 768px) {
     display: block;
     width: 700px;
@@ -26,7 +26,6 @@ export const Text = styled.p`
   }
 `;
 export const Wrap = styled.div`
-
   margin-top: 50px;
   display: flex;
   flex-direction: column;
