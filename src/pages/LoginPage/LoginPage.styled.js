@@ -26,7 +26,8 @@ export const Text = styled.p`
   }
 `;
 export const Wrap = styled.div`
-  margin-top: 50px;
+  overflow: hidden;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,7 +63,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
   @media (min-width: 768px) {
     width: 500px;
     padding: 40px 30px;
@@ -75,6 +76,5 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 30px;
   }
 `;
