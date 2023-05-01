@@ -16,7 +16,7 @@ export const ImgWrap = styled.div`
 export const Title = styled.h1`
   font-size: 30px;
   @media (min-width: 768px) {
-    font-size: 30px;
+    font-size: 35px;
   }
 `;
 export const Text = styled.p`
@@ -26,8 +26,7 @@ export const Text = styled.p`
   }
 `;
 export const Wrap = styled.div`
-  overflow: hidden;
-  margin-top: 25px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +52,7 @@ export const Wrap = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-color: rgb(255, 255, 255);
   -webkit-box-shadow: 10px 3px 18px 3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 3px 18px 3px rgba(0, 0, 0, 0.75);
@@ -63,7 +62,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   @media (min-width: 768px) {
     width: 500px;
     padding: 40px 30px;
@@ -76,5 +75,6 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 30px;
   }
 `;
