@@ -7,8 +7,10 @@ import {
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../../store/slices/userSlice";
+import { useState } from "react";
 
 export const Login = () => {
+  const [error, setError] = useState(false);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -27,19 +29,14 @@ export const Login = () => {
         );
         if (user.emailVerified) {
           navigate("/");
-        } else if () {
-
         } else {
           sendEmailVerification(user).then((res) => {
             navigate("/email-not-verified");
           });
         }
       })
-      .catch((user) => {
-        console.log(user);
-        navigate("/not-found-user");
-      });
+      .catch(() => setError(true));
   };
 
-  return <Form title="Sign In" handleClick={handleLogin} />;
+  return <Form title="Sign In" error={error} handleClick={handleLogin} />;
 };
