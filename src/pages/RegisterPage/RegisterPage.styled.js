@@ -26,7 +26,7 @@ export const Text = styled.p`
   }
 `;
 export const Wrap = styled.div`
-  margin-top: 30px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
