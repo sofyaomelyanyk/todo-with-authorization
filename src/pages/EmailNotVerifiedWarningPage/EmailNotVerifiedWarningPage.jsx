@@ -30,7 +30,7 @@ export const EmailVerificationWarningPage = () => {
           <p className={styles["verification-warning"]}>
             Your email is not verified.
           </p>
-          <p>Please verify your email to access this page.</p>
+          <p>An email has been sent to your email, please confirm it</p>
         </div>
       )}
       <button onClick={handleBack} className={styles["back-button"]}>

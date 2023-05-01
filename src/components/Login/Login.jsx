@@ -27,14 +27,18 @@ export const Login = () => {
         );
         if (user.emailVerified) {
           navigate("/");
+        } else if () {
+
         } else {
           sendEmailVerification(user).then((res) => {
-            
             navigate("/email-not-verified");
           });
         }
       })
-      .catch(() => navigate("/not-found-user"));
+      .catch((user) => {
+        console.log(user);
+        navigate("/not-found-user");
+      });
   };
 
   return <Form title="Sign In" handleClick={handleLogin} />;
