@@ -13,7 +13,6 @@ import {
 export const RegisterPage = () => {
   return (
     <BgColor>
-      {" "}
       <Wrap>
         <ImgWrap>
           <img src={BGImg} alt="" />
@@ -22,8 +21,8 @@ export const RegisterPage = () => {
           <Title>Register</Title>
           <SignUp />
           <Text>
-            Already have an account?{" "}
-            <StyledLink to="/login">Sign in</StyledLink>
+            Already have an account?
+            <StyledLink to="/login"> Sign in</StyledLink>
           </Text>
         </Container>
       </Wrap>
