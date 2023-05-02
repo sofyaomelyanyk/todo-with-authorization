@@ -1,7 +1,11 @@
 import { Form } from "../Form/Form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
 import { setUser } from "../../store/slices/userSlice";
 
 export const SignUp = () => {
@@ -22,7 +26,13 @@ export const SignUp = () => {
             token: user.accessToken,
           })
         );
-        navigate("/");
+        if (user.emailVerified) {
+          navigate("/");
+        } else {
+          sendEmailVerification(user).then((res) => {
+            navigate("/email-not-verified");
+          });
+        }
       })
       .catch(() => navigate("/user-already-exists"));
   };

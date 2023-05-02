@@ -24,8 +24,8 @@ export const Form = ({ title, error, handleClick }) => {
 
   const passwordHandler = (e) => {
     setPassword(e.target.value);
-    if (e.target.value.length < 6 || e.target.value.length > 8) {
-      setPasswordError("Password must be between 6 and 8 characters");
+    if (e.target.value.length < 8 || e.target.value.length > 32) {
+      setPasswordError("Password must be between 8 and 32 characters");
       if (!e.target.value) {
         setPasswordError("Password is required");
       }

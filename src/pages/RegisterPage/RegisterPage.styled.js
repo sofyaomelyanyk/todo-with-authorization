@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const BgColor = styled.div`
-  width: 100vw;
-  height: 100vh;
+  padding: 15px;
+  min-width: 100vw;
+  min-height: 100vh;
   background: #adccea;
 `;
 

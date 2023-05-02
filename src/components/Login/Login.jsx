@@ -1,10 +1,6 @@
 import { Form } from "../Form/Form";
 import { useDispatch } from "react-redux";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  sendEmailVerification,
-} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../../store/slices/userSlice";
 import { useState } from "react";
@@ -29,10 +25,6 @@ export const Login = () => {
         );
         if (user.emailVerified) {
           navigate("/");
-        } else {
-          sendEmailVerification(user).then((res) => {
-            navigate("/email-not-verified");
-          });
         }
       })
       .catch(() => setError(true));
