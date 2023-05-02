@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+export const BgColor = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: #adccea;
+`;
+
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #4b0082;
@@ -26,14 +32,15 @@ export const Text = styled.p`
   }
 `;
 export const Wrap = styled.div`
-  margin-top: 60px;
+  padding-top: 60px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
   @media (min-width: 768px) {
-    margin-top: 50px;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +48,7 @@ export const Wrap = styled.div`
     gap: 50px;
   }
   @media (min-width: 1280px) {
-    margin-top: 100px;
+    padding-top: 130px;
     display: flex;
     flex-direction: row;
     justify-content: center;

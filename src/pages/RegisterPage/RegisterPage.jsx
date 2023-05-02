@@ -7,21 +7,26 @@ import {
   Text,
   Title,
   ImgWrap,
+  BgColor,
 } from "./RegisterPage.styled";
 
 export const RegisterPage = () => {
   return (
-    <Wrap>
-      <ImgWrap>
-        <img src={BGImg} alt="" />
-      </ImgWrap>
-      <Container>
-        <Title>Register</Title>
-        <SignUp />
-        <Text>
-          Already have an account? <StyledLink to="/login">Sign in</StyledLink>
-        </Text>
-      </Container>
-    </Wrap>
+    <BgColor>
+      {" "}
+      <Wrap>
+        <ImgWrap>
+          <img src={BGImg} alt="" />
+        </ImgWrap>
+        <Container>
+          <Title>Register</Title>
+          <SignUp />
+          <Text>
+            Already have an account?{" "}
+            <StyledLink to="/login">Sign in</StyledLink>
+          </Text>
+        </Container>
+      </Wrap>
+    </BgColor>
   );
 };
