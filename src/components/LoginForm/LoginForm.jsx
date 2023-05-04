@@ -1,23 +1,13 @@
 import { useState } from "react";
 import s from "../Form/Form.module.scss";
 
-export const Form = ({ title, error, handleClick }) => {
-  const [name, setName] = useState("");
+export const LoginForm = ({ title, error, handleClick }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailDirty, setEmailDirty] = useState(false);
-  const [nameDirty, setNameDirty] = useState(false);
   const [passwordDirty, setPasswordDirty] = useState(false);
-  const [nameError, setNameError] = useState("Name is required");
   const [emailError, setEmailError] = useState("Email is required");
   const [passwordError, setPasswordError] = useState("Password is required");
-
-  const nameHandler = (e) => {
-    setName(e.target.value);
-    if (!e.target.value) {
-      setNameError("Password is required");
-    } else setNameError("");
-  };
 
   const emailHandler = (e) => {
     setEmail(e.target.value);
@@ -44,9 +34,6 @@ export const Form = ({ title, error, handleClick }) => {
 
   const blurHandler = (e) => {
     switch (e.target.name) {
-      case "name":
-        setNameDirty(true);
-        break;
       case "email":
         setEmailDirty(true);
         break;
@@ -66,21 +53,6 @@ export const Form = ({ title, error, handleClick }) => {
             That email and password combination is incorrect.
           </p>
           <div className={s["form-field"]}>
-            <label className={s.text}>Name</label>
-            {nameError && nameDirty && (
-              <div className={s.error}>{nameError}</div>
-            )}
-            <input
-              className={s.input}
-              onBlur={(e) => blurHandler(e)}
-              type="name"
-              value={name}
-              name="name"
-              placeholder="Name"
-              onChange={(e) => nameHandler(e)}
-            />
-          </div>
-          <div className={s["form-field"]}>
             <label className={s.text}>Email</label>
             {emailError && emailDirty && (
               <div className={s.error}>{emailError}</div>
@@ -95,7 +67,6 @@ export const Form = ({ title, error, handleClick }) => {
               placeholder="Email"
             />
           </div>
-
           <div className={s["form-field"]}>
             <label className={s.text}>Password</label>
             {passwordError && passwordDirty && (
@@ -132,21 +103,6 @@ export const Form = ({ title, error, handleClick }) => {
       ) : (
         <div className={s.form}>
           <div className={s["form-field"]}>
-            <label className={s.text}>Name</label>
-            {nameError && nameDirty && (
-              <div className={s.error}>{nameError}</div>
-            )}
-            <input
-              className={s.input}
-              onBlur={(e) => blurHandler(e)}
-              type="name"
-              value={name}
-              name="name"
-              placeholder="Name"
-              onChange={(e) => nameHandler(e)}
-            />
-          </div>
-          <div className={s["form-field"]}>
             <label className={s.text}>Email</label>
             {emailError && emailDirty && (
               <div className={s.error}>{emailError}</div>
@@ -161,7 +117,6 @@ export const Form = ({ title, error, handleClick }) => {
               placeholder="Email"
             />
           </div>
-
           <div className={s["form-field"]}>
             <label className={s.text}>Password</label>
             {passwordError && passwordDirty && (

@@ -1,4 +1,4 @@
-import { Form } from "../Form/Form";
+import { LoginForm } from "../LoginForm/LoginForm";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -30,5 +30,5 @@ export const Login = () => {
       .catch(() => setError(true));
   };
 
-  return <Form title="Sign In" error={error} handleClick={handleLogin} />;
+  return <LoginForm title="Sign In" error={error} handleClick={handleLogin} />;
 };

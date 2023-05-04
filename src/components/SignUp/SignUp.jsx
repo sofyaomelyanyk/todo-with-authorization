@@ -13,14 +13,15 @@ export const SignUp = () => {
 
   const navigate = useNavigate();
 
-  const handleRegister = (email, password) => {
+  const handleRegister = (name, email, password) => {
     const auth = getAuth();
     console.log(auth);
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, name, email, password)
       .then(({ user }) => {
         console.log(user);
         dispatch(
           setUser({
+            name: user.name,
             email: user.email,
             id: user.uid,
             token: user.accessToken,
