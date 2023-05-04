@@ -1,4 +1,4 @@
-import { Form } from "../Form/Form";
+import { RegisterForm } from "../RegisterForm/RegisterForm";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
@@ -37,5 +37,5 @@ export const SignUp = () => {
       })
       .catch(() => navigate("/user-already-exists"));
   };
-  return <Form title="Register" handleClick={handleRegister} />;
+  return <RegisterForm title="Register" handleClick={handleRegister} />;
 };

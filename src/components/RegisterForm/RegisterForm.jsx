@@ -1,7 +1,7 @@
 import { useState } from "react";
-import s from "../Form/Form.module.scss";
+import s from "../RegisterForm/RegisterForm.module.scss";
 
-export const Form = ({ title, error, handleClick }) => {
+export const RegisterForm = ({ title, error, handleClick }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
