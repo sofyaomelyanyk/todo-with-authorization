@@ -13,14 +13,16 @@ import { Plug } from "../../components/Plug/Plug";
 
 export const HomePage = () => {
   const [todo, setTodo] = useState([]);
-  const { isAuth, email } = useAuth();
+  const { isAuth, name } = useAuth();
   const dispatch = useDispatch();
+  console.log(name);
+  console.log(isAuth)
   return (
     <>
       {isAuth ? (
         <Container>
           <button onClick={() => dispatch(removeUser())}>
-            Log Out from {email}
+            Log Out from {name}
           </button>
           <Header />
           <AddTodo todo={todo} setTodo={setTodo} />

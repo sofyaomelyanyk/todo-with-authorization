@@ -116,7 +116,7 @@ export const RegisterForm = ({ title, error, handleClick }) => {
             <div className={s["form-field"]}>
               <button
                 className={s.button}
-                onClick={(e) => handleClick(email, password)}
+                onClick={(e) => handleClick(name, email, password)}
               >
                 {title}
               </button>
@@ -182,7 +182,7 @@ export const RegisterForm = ({ title, error, handleClick }) => {
             <div className={s["form-field"]}>
               <button
                 className={s.button}
-                onClick={(e) => handleClick(email, password)}
+                onClick={(e) => handleClick(name, email, password)}
               >
                 {title}
               </button>

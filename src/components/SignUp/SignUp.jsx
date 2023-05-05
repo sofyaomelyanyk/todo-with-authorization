@@ -15,13 +15,13 @@ export const SignUp = () => {
 
   const handleRegister = (name, email, password) => {
     const auth = getAuth();
-    console.log(auth);
-    createUserWithEmailAndPassword(auth, name, email, password)
+
+    createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         console.log(user);
         dispatch(
           setUser({
-            name: user.name,
+            name,
             email: user.email,
             id: user.uid,
             token: user.accessToken,
@@ -32,6 +32,8 @@ export const SignUp = () => {
         } else {
           sendEmailVerification(user).then((res) => {
             navigate("/email-not-verified");
+            console.log(name);
+          
           });
         }
       })
