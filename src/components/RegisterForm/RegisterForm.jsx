@@ -2,22 +2,22 @@ import { useState } from "react";
 import s from "../RegisterForm/RegisterForm.module.scss";
 
 export const RegisterForm = ({ title, error, handleClick }) => {
-  const [name, setName] = useState("");
+  //   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailDirty, setEmailDirty] = useState(false);
-  const [nameDirty, setNameDirty] = useState(false);
+  //   const [nameDirty, setNameDirty] = useState(false);
   const [passwordDirty, setPasswordDirty] = useState(false);
-  const [nameError, setNameError] = useState("Name is required");
+  //   const [nameError, setNameError] = useState("Name is required");
   const [emailError, setEmailError] = useState("Email is required");
   const [passwordError, setPasswordError] = useState("Password is required");
 
-  const nameHandler = (e) => {
-    setName(e.target.value);
-    if (!e.target.value) {
-      setNameError("Password is required");
-    } else setNameError("");
-  };
+  //   const nameHandler = (e) => {
+  //     setName(e.target.value);
+  //     if (!e.target.value) {
+  //       setNameError("Password is required");
+  //     } else setNameError("");
+  //   };
 
   const emailHandler = (e) => {
     setEmail(e.target.value);
@@ -44,9 +44,9 @@ export const RegisterForm = ({ title, error, handleClick }) => {
 
   const blurHandler = (e) => {
     switch (e.target.name) {
-      case "name":
-        setNameDirty(true);
-        break;
+      // case "name":
+      //   setNameDirty(true);
+      //   break;
       case "email":
         setEmailDirty(true);
         break;
@@ -57,7 +57,6 @@ export const RegisterForm = ({ title, error, handleClick }) => {
         console("default");
     }
   };
-
   return (
     <>
       {error ? (
@@ -65,21 +64,6 @@ export const RegisterForm = ({ title, error, handleClick }) => {
           <p className={s.error}>
             That email and password combination is incorrect.
           </p>
-          <div className={s["form-field"]}>
-            <label className={s.text}>Name</label>
-            {nameError && nameDirty && (
-              <div className={s.error}>{nameError}</div>
-            )}
-            <input
-              className={s.input}
-              onBlur={(e) => blurHandler(e)}
-              type="name"
-              value={name}
-              name="name"
-              placeholder="Name"
-              onChange={(e) => nameHandler(e)}
-            />
-          </div>
           <div className={s["form-field"]}>
             <label className={s.text}>Email</label>
             {emailError && emailDirty && (
@@ -95,7 +79,6 @@ export const RegisterForm = ({ title, error, handleClick }) => {
               placeholder="Email"
             />
           </div>
-
           <div className={s["form-field"]}>
             <label className={s.text}>Password</label>
             {passwordError && passwordDirty && (
@@ -116,7 +99,7 @@ export const RegisterForm = ({ title, error, handleClick }) => {
             <div className={s["form-field"]}>
               <button
                 className={s.button}
-                onClick={(e) => handleClick(name, email, password)}
+                onClick={(e) => handleClick(email, password)}
               >
                 {title}
               </button>
@@ -132,21 +115,6 @@ export const RegisterForm = ({ title, error, handleClick }) => {
       ) : (
         <div className={s.form}>
           <div className={s["form-field"]}>
-            <label className={s.text}>Name</label>
-            {nameError && nameDirty && (
-              <div className={s.error}>{nameError}</div>
-            )}
-            <input
-              className={s.input}
-              onBlur={(e) => blurHandler(e)}
-              type="name"
-              value={name}
-              name="name"
-              placeholder="Name"
-              onChange={(e) => nameHandler(e)}
-            />
-          </div>
-          <div className={s["form-field"]}>
             <label className={s.text}>Email</label>
             {emailError && emailDirty && (
               <div className={s.error}>{emailError}</div>
@@ -161,7 +129,6 @@ export const RegisterForm = ({ title, error, handleClick }) => {
               placeholder="Email"
             />
           </div>
-
           <div className={s["form-field"]}>
             <label className={s.text}>Password</label>
             {passwordError && passwordDirty && (
@@ -182,7 +149,7 @@ export const RegisterForm = ({ title, error, handleClick }) => {
             <div className={s["form-field"]}>
               <button
                 className={s.button}
-                onClick={(e) => handleClick(name, email, password)}
+                onClick={(e) => handleClick(email, password)}
               >
                 {title}
               </button>
@@ -199,3 +166,146 @@ export const RegisterForm = ({ title, error, handleClick }) => {
     </>
   );
 };
+
+// return (
+//    <>
+//      {error ? (
+//        <div className={s.form}>
+//          <p className={s.error}>
+//            That email and password combination is incorrect.
+//          </p>
+
+//          <div className={s["form-field"]}>
+//            <label className={s.text}>Name</label>
+//            {nameError && nameDirty && (
+//              <div className={s.error}>{nameError}</div>
+//            )}
+
+//            <input
+//              className={s.input}
+//              onBlur={(e) => blurHandler(e)}
+//              type="name"
+//              value={name}
+//              name="name"
+//              placeholder="Name"
+//              onChange={(e) => nameHandler(e)}
+//            />
+//          </div>
+//          <div className={s["form-field"]}>
+//            <label className={s.text}>Email</label>
+//            {emailError && emailDirty && (
+//              <div className={s.error}>{emailError}</div>
+//            )}
+//            <input
+//              className={s.input}
+//              onBlur={(e) => blurHandler(e)}
+//              type="email"
+//              value={email}
+//              name="email"
+//              onChange={(e) => emailHandler(e)}
+//              placeholder="Email"
+//            />
+//          </div>
+
+//          <div className={s["form-field"]}>
+//            <label className={s.text}>Password</label>
+//            {passwordError && passwordDirty && (
+//              <div className={s.error}>{passwordError}</div>
+//            )}
+//            <input
+//              className={s.input}
+//              onBlur={(e) => blurHandler(e)}
+//              type="password"
+//              value={password}
+//              name="password"
+//              onChange={(e) => passwordHandler(e)}
+//              placeholder="Password"
+//            />
+//          </div>
+
+//          {!emailError && !passwordError ? (
+//            <div className={s["form-field"]}>
+//              <button
+//                className={s.button}
+//                onClick={(e) => handleClick(name, email, password)}
+//              >
+//                {title}
+//              </button>
+//            </div>
+//          ) : (
+//            <div className={s["form-field"]}>
+//              <button className={s["button-disabled"]} disabled>
+//                {title}
+//              </button>
+//            </div>
+//          )}
+//        </div>
+//      ) : (
+//        <div className={s.form}>
+//          <div className={s["form-field"]}>
+//            <label className={s.text}>Name</label>
+//            {nameError && nameDirty && (
+//              <div className={s.error}>{nameError}</div>
+//            )}
+//            <input
+//              className={s.input}
+//              onBlur={(e) => blurHandler(e)}
+//              type="name"
+//              value={name}
+//              name="name"
+//              placeholder="Name"
+//              onChange={(e) => nameHandler(e)}
+//            />
+//          </div>
+//          <div className={s["form-field"]}>
+//            <label className={s.text}>Email</label>
+//            {emailError && emailDirty && (
+//              <div className={s.error}>{emailError}</div>
+//            )}
+//            <input
+//              className={s.input}
+//              onBlur={(e) => blurHandler(e)}
+//              type="email"
+//              value={email}
+//              name="email"
+//              onChange={(e) => emailHandler(e)}
+//              placeholder="Email"
+//            />
+//          </div>
+
+//          <div className={s["form-field"]}>
+//            <label className={s.text}>Password</label>
+//            {passwordError && passwordDirty && (
+//              <div className={s.error}>{passwordError}</div>
+//            )}
+//            <input
+//              className={s.input}
+//              onBlur={(e) => blurHandler(e)}
+//              type="password"
+//              value={password}
+//              name="password"
+//              onChange={(e) => passwordHandler(e)}
+//              placeholder="Password"
+//            />
+//          </div>
+
+//          {!emailError && !passwordError ? (
+//            <div className={s["form-field"]}>
+//              <button
+//                className={s.button}
+//                onClick={(e) => handleClick(name, email, password)}
+//              >
+//                {title}
+//              </button>
+//            </div>
+//          ) : (
+//            <div className={s["form-field"]}>
+//              <button className={s["button-disabled"]} disabled>
+//                {title}
+//              </button>
+//            </div>
+//          )}
+//        </div>
+//      )}
+//    </>
+//  );

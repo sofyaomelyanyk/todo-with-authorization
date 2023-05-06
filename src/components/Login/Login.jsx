@@ -4,12 +4,11 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../../store/slices/userSlice";
 import { useState } from "react";
-import { useAuth } from "../../hooks/use-auth";
+
 
 export const Login = () => {
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
-  const { name } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = (email, password) => {
@@ -19,7 +18,6 @@ export const Login = () => {
         console.log(user);
         dispatch(
           setUser({
-            name,
             email: user.email,
             id: user.uid,
             token: user.accessToken,

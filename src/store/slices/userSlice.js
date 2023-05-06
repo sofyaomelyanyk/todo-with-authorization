@@ -29,3 +29,4 @@ const userSlice = createSlice({
 export const { setUser, removeUser } = userSlice.actions;
 // Редюсер слайса
 export const userSliceReducer = userSlice.reducer;
+
