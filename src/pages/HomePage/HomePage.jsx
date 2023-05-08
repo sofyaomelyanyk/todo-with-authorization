@@ -7,14 +7,28 @@ import { removeUser } from "../../store/slices/userSlice";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { AddTodo } from "../../components/AddTodo/AddTodo";
+import { useEffect } from "react";
 import { ListTodo } from "../../components/ListTodo/ListTodo";
 import { Header } from "../../components/Header/Header";
 import { Plug } from "../../components/Plug/Plug";
 
 export const HomePage = () => {
-  const [todo, setTodo] = useState([]);
+  const [todo, setTodo] = useState(() => {
+    let todos = null;
+
+    try {
+      todos = JSON.parse(localStorage.getItem("todos"));
+    } catch (e) {}
+
+    return Array.isArray(todos) ? todos : [];
+  });
+  
   const { isAuth, email } = useAuth();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    localStorage.setItem("todo", JSON.stringify(todo));
+  }, [todo]);
 
   return (
     <>

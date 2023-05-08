@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { setUser } from "../../store/slices/userSlice";
 import { useState } from "react";
 
-
 export const Login = () => {
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
@@ -23,10 +22,17 @@ export const Login = () => {
             token: user.accessToken,
           })
         );
-        if (!user.emailVerified) {
-          navigate("/email-not-verified");
+        if (user.emailVerified) {
+          user
+            .getIdToken()
+            .then((token) => {
+              window.localStorage.setItem("token", token);
+              
+              navigate("/");
+            })
+            .catch(() => setError(true));
         } else {
-          navigate("/");
+          navigate("/email-not-verified");
         }
         window.localStorage.setItem("emailForSignIn", email);
       })
