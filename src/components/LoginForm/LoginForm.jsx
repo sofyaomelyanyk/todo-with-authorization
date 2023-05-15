@@ -41,7 +41,7 @@ export const LoginForm = ({ title, error, handleClick }) => {
         setPasswordDirty(true);
         break;
       default:
-        console("default");
+        console.log("default");
     }
   };
 
