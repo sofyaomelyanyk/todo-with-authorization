@@ -11,18 +11,18 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const ListTodo = ({ todo, setTodo }) => {
+export const ListTodo = ({ todos, setTodos }) => {
   const [edit, setEdit] = useState(null);
   const [newValue, setNewValue] = useState("");
-  const [filtered, setFiltered] = useState(todo);
+  const [filtered, setFiltered] = useState(todos);
 
   useEffect(() => {
-    setFiltered(todo);
-  }, [todo]);
+    setFiltered(todos);
+  }, [todos]);
 
   const deleteTodo = (id) => {
-    let newTodo = [...todo].filter((item) => item.id !== id);
-    setTodo(newTodo);
+    let newTodo = [...todos].filter((item) => item.id !== id);
+    setTodos(newTodo);
   };
 
   const editTodo = (id, title) => {
@@ -31,13 +31,13 @@ export const ListTodo = ({ todo, setTodo }) => {
   };
 
   const statusTodo = (id) => {
-    const newTodo = [...todo].filter((item) => {
+    const newTodo = [...todos].filter((item) => {
       if (item.id === id) {
         item.status = !item.status;
       }
       return item;
     });
-    setTodo(newTodo);
+    setTodos(newTodo);
   };
 
   const onChange = (e) => {
@@ -45,25 +45,25 @@ export const ListTodo = ({ todo, setTodo }) => {
   };
 
   const saveNewTitle = (id) => {
-    const newTodo = [...todo].map((item) => {
+    const newTodo = [...todos].map((item) => {
       if (item.id === id) {
         item.title = newValue;
       }
       return item;
     });
-    setTodo(newTodo);
+    setTodos(newTodo);
     setEdit(null);
   };
 
   const todoFilter = (status) => {
     if (status === "all") {
-      setFiltered(todo);
+      setFiltered(todos);
     } else {
-      const newTodo = [...todo].filter((item) => item.status === status);
+      const newTodo = [...todos].filter((item) => item.status === status);
       setFiltered(newTodo);
     }
   };
-  console.log(todo);
+  console.log(todos);
   return (
     <>
       <div className={s["btn-container"]}>

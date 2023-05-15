@@ -6,12 +6,12 @@ import { Row, Col, Button, FormControl } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-export const AddTodo = ({ todo, setTodo }) => {
+export const AddTodo = ({ todos, setTodos }) => {
   const [value, setValue] = useState("");
 
   const saveNewTodo = () => {
-    setTodo([
-      ...todo,
+    setTodos([
+      ...todos,
       {
         id: nanoid(),
         title: value,
@@ -20,7 +20,7 @@ export const AddTodo = ({ todo, setTodo }) => {
     ]);
 
     if (!value) {
-      setTodo([...todo]);
+      setTodos([...todos]);
       toast.warning("Please, add a new todo!", {
         position: toast.POSITION.TOP_CENTER,
         className: "toast-message",
