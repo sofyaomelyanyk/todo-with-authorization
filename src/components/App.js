@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
 import { EmailVerificationWarningPage } from "../pages/EmailNotVerifiedWarningPage/EmailNotVerifiedWarningPage";
 import { HomePage } from "../pages/HomePage/HomePage";
 import { LoginPage } from "../pages/LoginPage/LoginPage";
