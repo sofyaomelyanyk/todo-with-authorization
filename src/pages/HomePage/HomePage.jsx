@@ -12,10 +12,15 @@ import { ListTodo } from "../../components/ListTodo/ListTodo";
 import { Header } from "../../components/Header/Header";
 import { Plug } from "../../components/Plug/Plug";
 
+
 export const HomePage = () => {
-  const [todos, setTodos] = useState(["Learn React", "Hello React"]);
+  const [todos, setTodos] = useState([]);
   const { isAuth, email } = useAuth();
   const dispatch = useDispatch();
+
+  
+
+  console.log(todos);
 
   return (
     <>
